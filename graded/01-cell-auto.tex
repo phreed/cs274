@@ -1,0 +1,224 @@
+Spring 2012
+
+01/19/12
+
+CS 274: Modeling & Simulation
+
+G. Biswas
+
+Assignment 1(a)
+
+Due: Thursday, February 2, 2012
+
+Instructions: Submit to the Digital Drop Box on Oak by noon on the date due.
+Problem 1: Consider one of the available John Conway’s Game of Life
+45 points implementations (either a Java applet or a freeware/shareware version).
+Discover patterns that lead to each of the four different classes of behaviors.
+Include screen captures of the evolution of the different patterns in time,
+and generate an explanation of why the different behaviors emerge and why
+you classified it as such.
+
+Class 1 – Steady state
+Description: Evolution to stable, homogeneous state, i.e., dynamics die out.
+
+Class 2 – Limit Cycles
+Description: Evolution leads to stable or oscillating structures, i.e., dynam-
+ics become periodic; effects (changes) only propagate a finite distance
+(In other words, local changes to the initial pattern tend to remain local).
+
+Class 3 – Chaotic
+Description: Effects (changes) propagate at a finite speed forever. Any sta-
+ble structures produced are eventually destroyed by their surroundings.
+Future states depend on increasing number of past states.
+Disordered initial states may lead to chaotic (but not random) behavior.
+
+Class 4 – Structured Chaos
+Description: Evolution leads to complex localized structures (may be class
+2 stable or oscillating structures), but the number of steps required to
+reach this configuration may be very large even if the initial structure is
+relatively simple (e.g., R-pentomino): effects propagate indefinitely in
+space.
+
+Details:
+Capture screen shots that show evolution of behavior
+* Initially show how pattern evolves in 1 step, then 5 steps, 10 steps, 20
+steps to see if you get a feel for the emerging structure. Use additional
+screenshots to support your discussion of the evolving behavior, whether
+periodic or non periodic. Summarize in words the dynamic evolution you
+observe, and see if you can justify it in terms of a real-world system (use
+your intuition). Use the Game of Life rules to support your answer.
+
+* Determine how many steps to run before you reach a steady behavior or
+a periodic behavior (classes 1, 2, and 4 and the rate of evolution in class 3)
+
+* Any general conclusions you can draw from your analyses.
+
+Problem 2: Explain the notion of self-organizing behavior in cellular automata.
+5 points
+
+* What are attractors, and what is their role in self-organizing behaviors?
+
+From Wolfram
+
+To proceed in analyzing universality in cellular automata, one must first give more
+quantitative definitions of the classes identified above. 
+One approach to such definitions is to consider the degree of predictability of
+the outcome of cellular automaton evolution,
+given knowledge of the initial state. 
+
+For class I cellular automata complete prediction is trivial: 
+regardless of the initial state, the system always evolves to 
+a unique homogeneous state. 
+
+Class 2 cellular automata have
+the feature that the effects of particular site
+values propagate only a finite distance, 
+that is, only to a finite number of neighboring sites. 
+Thus a change in the value of a single
+initial site affects only a finite region of sites
+around it, even after an infinite number of time steps. 
+This behavior, illustrated in Fig. 9, 
+implies that prediction of a particular final
+site value requires knowledge of only a finite
+set of initial site values. 
+
+In contrast, changes of initial site values in 
+class 3 cellular automata, again as illustrated in Fig. 9, 
+almost always propagate at a finite speed forever
+and therefore affect more and more distant
+sites as time goes on. 
+The value of a particular site after many time steps thus
+depends on an ever-increasing number of initial site values. 
+If the initial state is disordered, this dependence 
+may lead to an apparently chaotic succession of values for a
+particular site. 
+In class 3 cellular automata, therefore, 
+prediction of the value of a site at
+infinite time would require knowledge of an
+infinite number of initial site values. 
+
+Class 4 cellular automata are distinguished by an
+even greater degree of unpredictability, as
+discussed below.
+
+Class 2 cellular automata may be considered as "filters" that select particular
+features of the initial state. 
+For example, a class 2 cellular automata may be 
+constructed in which initial sequences III survive, 
+but sites not in such sequences eventually attain value O. 
+Such cellular automata are of practical importance 
+for digital image processing:
+they may be used to select and enhance
+particular patterns of pixels. 
+After a sufficiently long time any class 2 cellular 
+automaton evolves to a state consisting of blocks
+containing nonzero sites separated by regions of zero sites. 
+The blocks have a simple form, typically consisting 
+of repetitions of particular site values or sequences of site
+values (such as 101010 .. .). 
+The blocks either do not change with time 
+(yielding vertical stripes in the patterns of Fig. 8) 
+or cycle between a few states 
+(yielding " railroad track" patterns).
+While class 2 cellular automata evolve to
+give persistent structures with small periods,
+class 3 cellular automata exhibit chaotic
+aperiodic behavior, as shown in Fig. 8.
+Although chaotic, the pattern s generated by
+class 3 cellular automata are not completely random. 
+In fact, as mentioned for the example of Eq. I, 
+they may exhibit important self-organizing behavior. 
+In addition and again in contrast to class 2 cellular automata, 
+the statistical properties of the states generated
+by many time steps of class 3 cellular
+automaton evolution are the same for almost
+all possible initial states.
+The large-time behavior of a class 3 cellular automaton is
+therefore determined by these common statistical properties.
+The configurations of an infinite cellular
+automaton consist of an infinite sequence of
+site values. 
+These site values could be considered as digits in a real number, 
+so that each complete configuration would correspond to a single real number. 
+The topology of the real numbers is, however, not
+exactly the same as the natural one for the configurations 
+(the binary numbers 0.111111 . . . and 1.00000 . .. are identical,
+but the corresponding configurations are not). 
+Instead, the configurations of an infinite
+cellular automaton form a Cantor set. 
+Figure 10 illustrates two constructions for a Cantor set.
+In construction (a) of Fig. 10, one starts with 
+the set of real numbers in the interval 0 to I. 
+First one excludes the middle third of the interval, 
+then the middle third of each interval remaining, and so on. 
+In the limit the set consists of an infinite number of disconnected points. 
+If positions in the interval are
+represented by ternimals (base 3 fractions,
+analogous to base 10 decimals), then the
+construction is seen to retain only points
+whose positions are represented by ternimals
+containing no I's (the point 0.2202022 is
+therefore included; 0.2201022 is excluded).
+An important featur e of the limiting set is its
+self-similarity, or fractal form: a piece of the
+set, when magnified, is indistinguishable
+from the whole. This self-similarity is math
+ematically analogous to that found for the
+limiting two-dimensional pattern of Fig. 3.
+In construction (b) of Fig. 10, the Cantor
+set is formed from the "leaves" of an infinite
+binary tree. Each point in the set is reached
+by a unique path from the "root" (top as
+drawn) of the tree. This path is specified by
+an infinite sequence of binary digits, in which
+successive digits determine whether the left-
+or right-hand branch is taken at each suc-
+cessive level in the tree. Each point in the
+Cantor set corresponds uniquely to one
+infinite sequence of digits and thus to one
+configuration of an infinite cellular automa-
+ton. Evolution of the cellular automaton then
+corresponds to iterated mappings of the
+Cantor set to itself. (The locality of cellular
+automaton rules implies that the mappings
+are continuous.) This interpretation of cellu-
+lar automata leads to analogies with the
+theory of iterated mappings of intervals of
+the real line. (See Mitchell J. Feigenbaum,
+"Universal Behavior in Nonlinear Systems,"
+Los Alamos Science , Vol. I, No. 1(1980):
+4-27.)
+Cantor sets are parameterized by their
+"dimensions." A convenient definition of
+dimension, based on construction (a) of Fig.
+10, is as follows. Divide the interval from 0
+to 1 into k n bins, each of width k - n. Then let
+N(n) be the number of these bins that
+contain points in the set. For large n this
+number behaves according to
+2
+o
+o
+2
+2
+o 2 o 2 o 2 o 2
+02 02 02 02 02 02 02 02
+(a)
+(b)
+N(n) ~
+0
+n ,
+(2)
+and d is defined as the "set dimension" of the
+Cantor set. If a set contained all points in the
+interval 0 to 1, then with this definition its
+dimension would simply be 1. Similarly, any
+finite number of segments of the real line
+would form a set with dimension I. How-
+ever, the Cantor set of construction (a),
+which contains an infinite number of discon-
+nected pieces, has a dimension according to
+Eq. 2 of log32 ~ 0.63.
+An alternative definition of dimension,
+agreeing with the previous one for present
+
